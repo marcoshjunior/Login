@@ -11,10 +11,10 @@
       <div>
         <h1>Login</h1>
         <p>Digite seus dados para entrar</p>
-        <form action="">
+        <form action="" method="get">
           <label for="idnome">E-mail:</label>
           <input type="text" id="idnome" placeholder="seu@email.com" required />
-          <label for="idsenha">Senha</label>
+          <label for="idsenha">Senha:</label>
           <input
             type="password"
             name="password"
@@ -25,7 +25,9 @@
           <button>Login</button>
         </form>
         <a href="#" id="link-esqueceu">Esqueceu a senha?</a>
-        <p>Não tem uma conta? <a href="#">Criar conta</a></p>
+        <p>
+          Não tem uma conta? <a href="#" id="link-criar-conta">Criar conta</a>
+        </p>
       </div>
     </main>
   </body>

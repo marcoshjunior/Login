@@ -41,29 +41,64 @@ main div {
 main div h1 {
   text-align: center;
   margin: 15px;
+  font-size: 1.5em;
+  color: var(--botoes-textos);
 }
+
 main div p {
   text-align: center;
   margin: 15px;
+  color: var(--bordas);
 }
+
 main div form {
   display: flex;
   flex-flow: column nowrap;
   margin: 20px;
 }
 main div form label {
-  padding: 7px 0px;
+  padding: 9px 0px;
+  color: var(--botoes-textos);
+  font-weight: bold;
 }
+
 main div form input {
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s ease;
 }
+main div form input:focus {
+  box-shadow: 0 0 0 3px var(--bordas);
+}
+
 main div form button {
-  padding: 5px;
+  padding: 9px;
   margin: 35px 0px;
+  border-radius: 10px;
+  background-color: var(--botoes-textos);
+  color: var(--background);
+  font-weight: bold;
+  transition: 0.1s;
 }
+main div form button:hover {
+  background-color: var(--bordas);
+}
+
 main div a#link-esqueceu {
   display: flex;
   justify-content: center;
   margin: 15px;
+  text-decoration: none;
+}
+main div a#link-esqueceu:hover {
+  text-decoration: underline;
+}
+
+main div #link-criar-conta {
+  text-decoration: none;
+}
+main div #link-criar-conta:hover {
+  text-decoration: underline;
 }
