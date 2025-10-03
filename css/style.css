@@ -16,6 +16,12 @@ html {
   background-color: var(--background);
 }
 
+body {
+  background-image: url("../img/img-de-fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   display: flex;
   flex-flow: row wrap;
@@ -27,9 +33,11 @@ main div {
   background-color: white;
   border: 2px solid var(--bordas);
   border-radius: 20px;
-  height: 450px;
-  width: 450px;
+  height: 400px;
+  width: 400px;
   padding: 0px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 @media screen and (max-width: 492px) {
@@ -56,6 +64,9 @@ main div form {
   flex-flow: column nowrap;
   margin: 20px;
 }
+main div form i {
+  margin: 0px 7px 0px 0px;
+}
 main div form label {
   padding: 9px 0px;
   color: var(--botoes-textos);
@@ -75,7 +86,7 @@ main div form input:focus {
 
 main div form button {
   padding: 9px;
-  margin: 35px 0px;
+  margin: 35px 0px 0px 0px;
   border-radius: 10px;
   background-color: var(--botoes-textos);
   color: var(--background);
