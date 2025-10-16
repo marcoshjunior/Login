@@ -1,8 +1,11 @@
 :root {
-  --background: #fceaff;
-  --botoes-textos: #5b25b3;
-  --bordas: #8871a2;
-  --cor-destaque: #63baaa;
+  --cor-principal: #2563eb;
+  --cor-hover: #1e4db7;
+  --background: #f9fafb;
+  --cor-texto: #111827;
+  --cor-label: #374151;
+  --input-border: #d1d5db;
+  --sombra-card: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -12,104 +15,118 @@
   box-sizing: border-box;
 }
 
-html {
-  background-color: var(--background);
-}
-
 body {
-  background-image: url("../img/img-de-fundo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-main {
+  min-height: 100vh;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-main div {
-  background-color: white;
-  border: 2px solid var(--bordas);
-  border-radius: 20px;
-  height: 400px;
-  width: 400px;
-  padding: 0px 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  flex-direction: row;
 }
 
-@media screen and (max-width: 492px) {
-  main div {
-    width: 90vw;
+.left {
+  flex: 1;
+  background: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200")
+    no-repeat center center;
+  background-size: cover;
+  /*
+  position: relative;
+  min-height: 100vh;
+  */
+}
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--input-border);
+  padding: 20px;
+}
+
+.login-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--sombra-card);
+  width: 100%;
+  max-width: 500px;
+  h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    color: var(--cor-texto);
+  }
+  h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--cor-texto);
   }
 }
 
-main div h1 {
-  text-align: center;
-  margin: 15px;
-  font-size: 1.5em;
-  color: var(--botoes-textos);
+.input-group {
+  margin-bottom: 15px;
+  label {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    display: block; /*talvez não precise*/
+    margin-bottom: 5px;
+    font-weight: bold; /*talvez não precise*/
+    i {
+      margin: 0px 6px 0px 0px;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    transition: box-shadow 0.2s ease;
+    &:focus {
+      box-shadow: 0 0 0 3px var(--cor-principal);
+    }
+  }
 }
-
-main div p {
-  text-align: center;
-  margin: 15px;
-  color: var(--bordas);
-}
-
-main div form {
-  display: flex;
-  flex-flow: column nowrap;
-  margin: 20px;
-}
-main div form i {
-  margin: 0px 7px 0px 0px;
-}
-main div form label {
-  padding: 9px 0px;
-  color: var(--botoes-textos);
-  font-weight: bold;
-}
-
-main div form input {
-  padding: 10px;
-  border-radius: 5px;
+.btn {
+  width: 100%;
+  padding: 6px;
+  background-color: var(--cor-principal);
+  color: white;
   border: none;
-  outline: none;
-  transition: box-shadow 0.2s ease;
-}
-main div form input:focus {
-  box-shadow: 0 0 0 3px var(--bordas);
-}
-
-main div form button {
-  padding: 9px;
-  margin: 35px 0px 0px 0px;
-  border-radius: 10px;
-  background-color: var(--botoes-textos);
-  color: var(--background);
-  font-weight: bold;
-  transition: 0.1s;
-}
-main div form button:hover {
-  background-color: var(--bordas);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background-color: var(--cor-hover);
+  }
 }
 
-main div a#link-esqueceu {
-  display: flex;
-  justify-content: center;
-  margin: 15px;
-  text-decoration: none;
-}
-main div a#link-esqueceu:hover {
-  text-decoration: underline;
+.links {
+  text-align: center;
+  margin-top: 13px;
+  font-size: 1rem;
+  a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-main div #link-criar-conta {
-  text-decoration: none;
-}
-main div #link-criar-conta:hover {
-  text-decoration: underline;
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .right {
+    /*centralizando a caixa no celular*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    padding: 20px;
+    background: transparent;
+  }
 }
